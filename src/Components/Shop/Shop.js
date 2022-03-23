@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Products/Product';
+import fakedb from '../Utilities/fakedb';
 import './Shop.css'
 
 const Shop = () => {
@@ -16,6 +17,7 @@ const Shop = () => {
     const handleClick = (product) => {
         const newCart = [...cart, product]
         setCart(newCart)
+        fakedb(product.id)
     }
 
     return (

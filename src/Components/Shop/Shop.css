@@ -6,4 +6,12 @@
     display: grid;
     grid-template-columns: repeat(3,1fr);
     row-gap: 40px;
+    margin: 80px 0px 0px 60px;
+}
+.cart-container{
+    background-color:rgba(255, 153, 0, 0.3) ;
+    
+}
+.cart-container h3{
+    text-align: center;
 }

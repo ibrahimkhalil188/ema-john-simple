@@ -17,11 +17,20 @@ const Shop = () => {
 
     useEffect(() => {
         const storedCart = getAddedItem()
+        const saveCart = []
         for (const id in storedCart) {
             const addedProduct = products.find(product => product.id === id)
-            console.log(addedProduct)
+
+            if (addedProduct) {
+                const quantity = storedCart[id]
+                addedProduct.quantity = quantity
+                saveCart.push(addedProduct)
+
+
+            }
         }
-    }, [])
+        setCart(saveCart)
+    }, [products])
 
     const handleClick = (product) => {
         const newCart = [...cart, product]
